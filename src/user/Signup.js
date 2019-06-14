@@ -13,7 +13,7 @@ const Signup = () => {
         success: false
     })
 
-    const { name, email, password, success, error } = values
+    const { name, email, password, error, success } = values
 
     const handleChange = field => event => {
         setValues({ ...values, error: false, [field]: event.target.value })
