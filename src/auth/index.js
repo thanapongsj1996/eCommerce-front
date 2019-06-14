@@ -35,8 +35,24 @@ export const signin = user => {
 }
 
 export const authenticate = (data, callBack) => {
-    if(typeof window !== 'undefined'){
+    if (typeof window !== 'undefined') {
         localStorage.setItem('jwt', JSON.stringify(data))
         callBack()
+    }
+}
+
+export const signout = (callBack) => {
+    if (typeof window !== 'undefined') {
+        localStorage.removeItem('jwt')
+        return fetch(`${API}/signout`, {
+            method: 'GET'
+        })
+            .then(response => {
+                console.log('Signout', response)
+                callBack()
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 }
