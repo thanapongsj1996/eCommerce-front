@@ -49,7 +49,7 @@ const Signin = () => {
                     <input onChange={handleChange('password')} type='password' value={password} className='form-control' />
                 </div>
 
-                <button onClick={clickSubmit} className='btn btn-primary'>Submit</button>
+                <button onClick={clickSubmit} className='btn btn-primary mt-3'>Submit</button>
 
             </form>
         )
